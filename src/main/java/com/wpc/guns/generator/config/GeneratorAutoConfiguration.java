@@ -1,7 +1,7 @@
 package com.wpc.guns.generator.config;
 
 import com.wpc.guns.generator.modular.controller.CodeController;
-import cn.stylefeng.roses.core.db.DbInitializer;
+import com.wpc.kernel.core.db.DbInitializer;
 import com.wpc.guns.generator.db.DbInfoInitializer;
 import com.wpc.guns.generator.modular.service.TableService;
 import org.springframework.context.annotation.Bean;

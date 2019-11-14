@@ -1,6 +1,6 @@
 package com.wpc.guns.generator.modular.service;
 
-import com.baomidou.mybatisplus.mapper.SqlRunner;
+import com.baomidou.mybatisplus.extension.toolkit.SqlRunner;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

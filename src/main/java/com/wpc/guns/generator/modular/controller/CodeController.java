@@ -1,7 +1,7 @@
 package com.wpc.guns.generator.modular.controller;
 
-import cn.stylefeng.roses.core.base.controller.BaseController;
-import cn.stylefeng.roses.core.config.properties.DruidProperties;
+import com.wpc.kernel.core.base.controller.BaseController;
+import com.wpc.kernel.core.config.properties.DruidProperties;
 import com.wpc.guns.generator.executor.config.WebGeneratorConfig;
 import com.wpc.guns.generator.executor.model.GenQo;
 import com.wpc.guns.generator.modular.factory.DefaultTemplateFactory;

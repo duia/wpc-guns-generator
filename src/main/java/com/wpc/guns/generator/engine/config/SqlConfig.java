@@ -1,8 +1,8 @@
 package com.wpc.guns.generator.engine.config;
 
-import cn.stylefeng.roses.core.util.ToolUtil;
-import cn.stylefeng.roses.kernel.model.enums.YesOrNotEnum;
-import com.baomidou.mybatisplus.toolkit.IdWorker;
+import com.baomidou.mybatisplus.core.toolkit.IdWorker;
+import com.wpc.kernel.core.util.ToolUtil;
+import com.wpc.kernel.model.enums.YesOrNotEnum;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

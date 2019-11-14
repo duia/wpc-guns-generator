@@ -1,6 +1,6 @@
 package com.wpc.guns.generator.engine.base;
 
-import cn.stylefeng.roses.core.util.ToolUtil;
+import com.wpc.kernel.core.util.ToolUtil;
 import com.sun.javafx.PlatformUtil;
 import org.beetl.core.Configuration;
 import org.beetl.core.GroupTemplate;

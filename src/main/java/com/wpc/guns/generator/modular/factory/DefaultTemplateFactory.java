@@ -1,7 +1,7 @@
 package com.wpc.guns.generator.modular.factory;
 
 
-import cn.stylefeng.roses.core.util.ToolUtil;
+import com.wpc.kernel.core.util.ToolUtil;
 import com.wpc.guns.generator.executor.model.GenQo;
 
 import java.util.ArrayList;

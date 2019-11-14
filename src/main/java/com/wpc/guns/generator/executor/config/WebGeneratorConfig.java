@@ -1,8 +1,8 @@
 package com.wpc.guns.generator.executor.config;
 
 import cn.hutool.core.util.StrUtil;
-import cn.stylefeng.roses.core.util.ToolUtil;
-import com.baomidou.mybatisplus.generator.config.rules.DbType;
+import com.baomidou.mybatisplus.annotation.DbType;
+import com.wpc.kernel.core.util.ToolUtil;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.wpc.guns.generator.executor.model.GenQo;
 

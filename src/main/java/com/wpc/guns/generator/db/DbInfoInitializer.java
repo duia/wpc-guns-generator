@@ -1,7 +1,7 @@
 package com.wpc.guns.generator.db;
 
 import com.wpc.guns.generator.modular.entity.CodeDbInfo;
-import cn.stylefeng.roses.core.db.DbInitializer;
+import com.wpc.kernel.core.db.DbInitializer;
 
 /**
  * 数据库链接信息表初始化
