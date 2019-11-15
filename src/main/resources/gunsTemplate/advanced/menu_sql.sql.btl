@@ -1,3 +1,4 @@
 <% for(menu in sqls.menus!){ %>
-INSERT INTO `guns`.`sys_menu` (`id`, `code`, `pcode`, `pcodes`, `name`, `icon`, `url`, `num`, `levels`, `ismenu`, `tips`, `status`, `isopen`) VALUES ('${menu.id}', '${menu.code}', '${menu.pcode}', '${menu.pcodes}', '${menu.name}', '${menu.icon}', '${menu.url}', '${menu.num}', '${menu.levels}', '${menu.ismenu}', NULL, '${menu.status}', '${menu.isopen}');
+INSERT INTO `guns`.`sys_menu` (`id`, `code`, `pcode`, `pcodes`, `name`, `icon`, `url`, `sort`, `levels`, `menu_flag`, `description`, `status`, `new_page_flag`, `open_flag`, `system_type`, `create_time`, `update_time`, `create_user`, `update_user`)
+VALUES ('${menu.menuId}', '${menu.code}', '${menu.pcode}', '${menu.pcodes}', '${menu.name}', '${menu.icon}', '${menu.url}', '${menu.sort}', '${menu.levels}', '${menu.menuFlag}', NULL, '${menu.status}', '${menu.newPageFlag}', '${menu.openFlag}', '${menu.systemType}', NOW(), NOW(), 0, 0);
 <% } %>

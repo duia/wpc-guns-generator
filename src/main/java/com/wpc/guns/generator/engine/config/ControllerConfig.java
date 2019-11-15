@@ -20,13 +20,17 @@ public class ControllerConfig {
     public void init() {
         ArrayList<String> imports = new ArrayList<>();
         imports.add("com.wpc.kernel.core.base.controller.BaseController");
+        imports.add("cn.hutool.core.bean.BeanUtil");
         imports.add("org.springframework.stereotype.Controller");
         imports.add("org.springframework.web.bind.annotation.RequestMapping");
         imports.add("org.springframework.web.bind.annotation.ResponseBody");
         imports.add("org.springframework.ui.Model");
         imports.add("org.springframework.web.bind.annotation.PathVariable");
         imports.add("org.springframework.beans.factory.annotation.Autowired");
-        imports.add(contextConfig.getProPackage() + ".core.log.LogObjectHolder");
+        imports.add("com.baomidou.mybatisplus.core.metadata.IPage");
+        imports.add("com.baomidou.mybatisplus.extension.plugins.pagination.Page");
+        imports.add(contextConfig.getProPackage() + ".sys.core.log.LogObjectHolder");
+        imports.add(contextConfig.getProPackage() + ".base.pojo.page.LayuiPageFactory");
         imports.add("org.springframework.web.bind.annotation.RequestParam");
         imports.add(contextConfig.getModelPackageName() + "." + contextConfig.getEntityName());
         imports.add(contextConfig.getProPackage() + ".modular." + contextConfig.getModuleName() + ".service" + ".I" + contextConfig.getEntityName() + "Service");

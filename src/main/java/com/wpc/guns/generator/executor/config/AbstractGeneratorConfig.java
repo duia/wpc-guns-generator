@@ -51,8 +51,8 @@ public abstract class AbstractGeneratorConfig {
         packageConfig.setService(contextConfig.getProPackage() + ".modular." + contextConfig.getModuleName() + ".service");
         packageConfig.setServiceImpl(contextConfig.getProPackage() + ".modular." + contextConfig.getModuleName() + ".service.impl");
         packageConfig.setEntity(contextConfig.getProPackage() + ".modular." + contextConfig.getModuleName() + ".model");
-        packageConfig.setMapper(contextConfig.getProPackage() + ".modular." + contextConfig.getModuleName() + ".dao");
-        packageConfig.setXml(contextConfig.getProPackage() + ".modular." + contextConfig.getModuleName() + ".dao.mapping");
+        packageConfig.setMapper(contextConfig.getProPackage() + ".modular." + contextConfig.getModuleName() + ".mapper");
+        packageConfig.setXml(contextConfig.getProPackage() + ".modular." + contextConfig.getModuleName() + ".mapper.mapping");
 
         //controller没用掉,生成之后会自动删掉
         packageConfig.setController("TTT");

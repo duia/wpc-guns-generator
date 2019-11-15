@@ -46,23 +46,24 @@ public class SqlConfig {
 
         //业务菜单
         Menu menu = new Menu();
-        menu.setId(IdWorker.getId());
+        menu.setMenuId(IdWorker.getId());
         menu.setCode(contextConfig.getBizEnName());
         menu.setPcode(pcodeAndPcodes[0]);
         menu.setPcodes(pcodeAndPcodes[1] + "[" + pcodeAndPcodes[0] + "],");
         menu.setName(contextConfig.getBizChName());
         menu.setIcon("");
         menu.setUrl("/" + contextConfig.getBizEnName());
-        menu.setNum(99);
+        menu.setSort(99);
 
         if (parentMenuName.equals("顶级")) {
             menu.setLevels(1);
         } else {
             menu.setLevels(2);
         }
-        menu.setIsmenu(YesOrNotEnum.Y.getCode());
-        menu.setStatus(1);
-        menu.setIsopen(0);
+        menu.setMenuFlag("Y");
+        menu.setStatus("ENABLE");
+        menu.setOpenFlag("0");
+        menu.setSystemType("BASE_SYSTEM");
         menus.add(menu);
 
         //列表
@@ -103,15 +104,16 @@ public class SqlConfig {
 
     private Menu createSubMenu(Menu parentMenu) {
         Menu menu = new Menu();
-        menu.setId(IdWorker.getId());
+        menu.setMenuId(IdWorker.getId());
         menu.setPcode(parentMenu.getCode());
         menu.setPcodes(parentMenu.getPcodes() + "[" + parentMenu.getCode() + "],");
         menu.setIcon("");
-        menu.setNum(99);
+        menu.setSort(99);
         menu.setLevels(parentMenu.getLevels() + 1);
-        menu.setIsmenu(YesOrNotEnum.N.getCode());
-        menu.setStatus(1);
-        menu.setIsopen(0);
+        menu.setMenuFlag("N");
+        menu.setStatus("ENABLE");
+        menu.setOpenFlag("0");
+        menu.setSystemType("BASE_SYSTEM");
         return menu;
     }
 

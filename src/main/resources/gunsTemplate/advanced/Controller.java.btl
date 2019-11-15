@@ -40,8 +40,8 @@ public class ${context.bizEnBigName}Controller extends BaseController {
      */
     @RequestMapping("/${context.bizEnName}_update/{${context.bizEnName}Id}")
     public String ${context.bizEnName}Update(@PathVariable Integer ${context.bizEnName}Id, Model model) {
-        ${context.entityName} ${context.bizEnName} = ${context.bizEnName}Service.selectById(${context.bizEnName}Id);
-        model.addAttribute("item",${context.bizEnName});
+        ${context.entityName} ${context.bizEnName} = ${context.bizEnName}Service.getById(${context.bizEnName}Id);
+        model.addAllAttributes(BeanUtil.beanToMap(${context.bizEnName}));
         LogObjectHolder.me().set(${context.bizEnName});
         return PREFIX + "${context.bizEnName}_edit.html";
     }
@@ -52,7 +52,10 @@ public class ${context.bizEnBigName}Controller extends BaseController {
     @RequestMapping(value = "/list")
     @ResponseBody
     public Object list(String condition) {
-        return ${context.bizEnName}Service.selectList(null);
+        //移到service层添加自行处理逻辑
+        Page<${context.entityName}> page = LayuiPageFactory.defaultPage();
+        IPage<${context.entityName}> list = this.bookService.page(page);//new QueryWrapper<${context.entityName}>().like("condition", "%"+condition+"%")
+        return LayuiPageFactory.createPageInfo(list);
     }
 
     /**
@@ -61,7 +64,7 @@ public class ${context.bizEnBigName}Controller extends BaseController {
     @RequestMapping(value = "/add")
     @ResponseBody
     public Object add(${context.entityName} ${context.bizEnName}) {
-        ${context.bizEnName}Service.insert(${context.bizEnName});
+        ${context.bizEnName}Service.save(${context.bizEnName});
         return SUCCESS_TIP;
     }
 
@@ -71,7 +74,7 @@ public class ${context.bizEnBigName}Controller extends BaseController {
     @RequestMapping(value = "/delete")
     @ResponseBody
     public Object delete(@RequestParam Integer ${context.bizEnName}Id) {
-        ${context.bizEnName}Service.deleteById(${context.bizEnName}Id);
+        ${context.bizEnName}Service.removeById(${context.bizEnName}Id);
         return SUCCESS_TIP;
     }
 
@@ -91,6 +94,6 @@ public class ${context.bizEnBigName}Controller extends BaseController {
     @RequestMapping(value = "/detail/{${context.bizEnName}Id}")
     @ResponseBody
     public Object detail(@PathVariable("${context.bizEnName}Id") Integer ${context.bizEnName}Id) {
-        return ${context.bizEnName}Service.selectById(${context.bizEnName}Id);
+        return ${context.bizEnName}Service.getById(${context.bizEnName}Id);
     }
 }

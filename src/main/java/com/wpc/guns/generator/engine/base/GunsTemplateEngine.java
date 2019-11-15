@@ -102,7 +102,8 @@ public abstract class GunsTemplateEngine extends AbstractTemplateEngine {
             generatePageJs();
         }
         if (super.contextConfig.getInfoJsSwitch()) {
-            generatePageInfoJs();
+            generatePageAddJs();
+            generatePageEditJs();
         }
         if (super.contextConfig.getSqlSwitch()) {
             generateSqls();
@@ -113,7 +114,9 @@ public abstract class GunsTemplateEngine extends AbstractTemplateEngine {
 
     protected abstract void generatePageAddHtml();
 
-    protected abstract void generatePageInfoJs();
+    protected abstract void generatePageAddJs();
+
+    protected abstract void generatePageEditJs();
 
     protected abstract void generatePageJs();
 

@@ -14,14 +14,16 @@ public class PageConfig {
     private String pageAddPathTemplate;
     private String pageEditPathTemplate;
     private String pageJsPathTemplate;
-    private String pageInfoJsPathTemplate;
+    private String pageAddJsPathTemplate;
+    private String pageEditJsPathTemplate;
 
     public void init() {
-        pagePathTemplate = "/src/main/webapp/WEB-INF/view/" + contextConfig.getModuleName() + "/{}/{}.html";
-        pageAddPathTemplate = "/src/main/webapp/WEB-INF/view/" + contextConfig.getModuleName() + "/{}/{}_add.html";
-        pageEditPathTemplate = "/src/main/webapp/WEB-INF/view/" + contextConfig.getModuleName() + "/{}/{}_edit.html";
-        pageJsPathTemplate = "/src/main/webapp/static/modular/" + contextConfig.getModuleName() + "/{}/{}.js";
-        pageInfoJsPathTemplate = "/src/main/webapp/static/modular/" + contextConfig.getModuleName() + "/{}/{}_info.js";
+        pagePathTemplate = "/src/main/webapp/pages/" + contextConfig.getModuleName() + "/{}/{}.html";
+        pageAddPathTemplate = "/src/main/webapp/pages/" + contextConfig.getModuleName() + "/{}/{}_add.html";
+        pageEditPathTemplate = "/src/main/webapp/pages/" + contextConfig.getModuleName() + "/{}/{}_edit.html";
+        pageJsPathTemplate = "/src/main/webapp/assets/" + contextConfig.getModuleName() + "/{}/{}.js";
+        pageAddJsPathTemplate = "/src/main/webapp/assets/" + contextConfig.getModuleName() + "/{}/{}_add.js";
+        pageEditJsPathTemplate = "/src/main/webapp/assets/" + contextConfig.getModuleName() + "/{}/{}_edit.js";
     }
 
     public String getPagePathTemplate() {
@@ -56,12 +58,20 @@ public class PageConfig {
         this.pageEditPathTemplate = pageEditPathTemplate;
     }
 
-    public String getPageInfoJsPathTemplate() {
-        return pageInfoJsPathTemplate;
+    public String getPageAddJsPathTemplate() {
+        return pageAddJsPathTemplate;
     }
 
-    public void setPageInfoJsPathTemplate(String pageInfoJsPathTemplate) {
-        this.pageInfoJsPathTemplate = pageInfoJsPathTemplate;
+    public void setPageAddJsPathTemplate(String pageAddJsPathTemplate) {
+        this.pageAddJsPathTemplate = pageAddJsPathTemplate;
+    }
+
+    public String getPageEditJsPathTemplate() {
+        return pageEditJsPathTemplate;
+    }
+
+    public void setPageEditJsPathTemplate(String pageEditJsPathTemplate) {
+        this.pageEditJsPathTemplate = pageEditJsPathTemplate;
     }
 
     public ContextConfig getContextConfig() {

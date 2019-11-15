@@ -1,11 +1,9 @@
 package com.wpc.guns.generator.engine.config;
 
-
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.baomidou.mybatisplus.annotation.*;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -13,73 +11,114 @@ import java.io.Serializable;
  * </p>
  *
  * @author stylefeng
- * @since 2017-07-11
+ * @since 2019-04-01
  */
-public class Menu extends Model<Menu> {
+public class Menu implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * 主键id
      */
-    @TableId(value = "id", type = IdType.AUTO)
-    private Long id;
+    @TableId(value = "menu_id", type = IdType.ID_WORKER)
+    private Long menuId;
+
     /**
      * 菜单编号
      */
     private String code;
+
     /**
      * 菜单父编号
      */
     private String pcode;
+
     /**
      * 当前菜单的所有父菜单编号
      */
     private String pcodes;
+
     /**
      * 菜单名称
      */
     private String name;
+
     /**
      * 菜单图标
      */
     private String icon;
+
     /**
      * url地址
      */
     private String url;
+
     /**
      * 菜单排序号
      */
-    private Integer num;
+    private Integer sort;
+
     /**
      * 菜单层级
      */
     private Integer levels;
+
     /**
-     * 是否是菜单（1：是  0：不是）
+     * 是否是菜单(字典)
      */
-    private Integer ismenu;
+    private String menuFlag;
+
     /**
      * 备注
      */
-    private String tips;
-    /**
-     * 菜单状态 :  1:启用   0:不启用
-     */
-    private Integer status;
-    /**
-     * 是否打开:    1:打开   0:不打开
-     */
-    private Integer isopen;
+    private String description;
 
+    /**
+     * 菜单状态(字典)
+     */
+    private String status;
 
-    public Long getId() {
-        return id;
+    /**
+     * 是否打开新页面的标识(字典)
+     */
+    private String newPageFlag;
+
+    /**
+     * 是否打开(字典)
+     */
+    private String openFlag;
+
+    /**
+     * 系统分类（字典）
+     */
+    private String systemType;
+
+    /**
+     * 创建时间
+     */
+    private Date createTime;
+
+    /**
+     * 修改时间
+     */
+    private Date updateTime;
+
+    /**
+     * 创建人
+     */
+    private Long createUser;
+
+    /**
+     * 修改人
+     */
+    private Long updateUser;
+
+    public Long getMenuId() {
+        return menuId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setMenuId(Long menuId) {
+        this.menuId = menuId;
     }
 
     public String getCode() {
@@ -130,12 +169,12 @@ public class Menu extends Model<Menu> {
         this.url = url;
     }
 
-    public Integer getNum() {
-        return num;
+    public Integer getSort() {
+        return sort;
     }
 
-    public void setNum(Integer num) {
-        this.num = num;
+    public void setSort(Integer sort) {
+        this.sort = sort;
     }
 
     public Integer getLevels() {
@@ -146,59 +185,108 @@ public class Menu extends Model<Menu> {
         this.levels = levels;
     }
 
-    public Integer getIsmenu() {
-        return ismenu;
+    public String getMenuFlag() {
+        return menuFlag;
     }
 
-    public void setIsmenu(Integer ismenu) {
-        this.ismenu = ismenu;
+    public void setMenuFlag(String menuFlag) {
+        this.menuFlag = menuFlag;
     }
 
-    public String getTips() {
-        return tips;
+    public String getDescription() {
+        return description;
     }
 
-    public void setTips(String tips) {
-        this.tips = tips;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
-    public Integer getIsopen() {
-        return isopen;
+    public String getNewPageFlag() {
+        return newPageFlag;
     }
 
-    public void setIsopen(Integer isopen) {
-        this.isopen = isopen;
+    public void setNewPageFlag(String newPageFlag) {
+        this.newPageFlag = newPageFlag;
     }
 
-    @Override
-    protected Serializable pkVal() {
-        return this.id;
+    public String getOpenFlag() {
+        return openFlag;
+    }
+
+    public void setOpenFlag(String openFlag) {
+        this.openFlag = openFlag;
+    }
+
+    public String getSystemType() {
+        return systemType;
+    }
+
+    public void setSystemType(String systemType) {
+        this.systemType = systemType;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Long getCreateUser() {
+        return createUser;
+    }
+
+    public void setCreateUser(Long createUser) {
+        this.createUser = createUser;
+    }
+
+    public Long getUpdateUser() {
+        return updateUser;
+    }
+
+    public void setUpdateUser(Long updateUser) {
+        this.updateUser = updateUser;
     }
 
     @Override
     public String toString() {
         return "Menu{" +
-                "id=" + id +
-                ", code=" + code +
-                ", pcode=" + pcode +
-                ", pcodes=" + pcodes +
-                ", name=" + name +
-                ", icon=" + icon +
-                ", url=" + url +
-                ", num=" + num +
+                "menuId=" + menuId +
+                ", code='" + code + '\'' +
+                ", pcode='" + pcode + '\'' +
+                ", pcodes='" + pcodes + '\'' +
+                ", name='" + name + '\'' +
+                ", icon='" + icon + '\'' +
+                ", url='" + url + '\'' +
+                ", sort=" + sort +
                 ", levels=" + levels +
-                ", ismenu=" + ismenu +
-                ", tips=" + tips +
-                ", status=" + status +
-                ", isopen=" + isopen +
-                "}";
+                ", menuFlag='" + menuFlag + '\'' +
+                ", description='" + description + '\'' +
+                ", status='" + status + '\'' +
+                ", newPageFlag='" + newPageFlag + '\'' +
+                ", openFlag='" + openFlag + '\'' +
+                ", systemType='" + systemType + '\'' +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", createUser=" + createUser +
+                ", updateUser=" + updateUser +
+                '}';
     }
 }
